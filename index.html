@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forex Sentinel Beta</title>
+<meta name="description" content="Forex Sentinel: widget xem giá luôn nổi trên màn hình, ghi giá vào lệnh và cảnh báo giá. Bản beta miễn phí cho Windows.">
+<style>
+  :root {
+    --bg: #f7f8fa; --card: #ffffff; --text: #1d2330; --muted: #5d6677; --line: #e2e6ee;
+    --accent: #1f6feb; --accent-text: #ffffff; --warn-bg: #fff6e0; --warn-line: #f0c36d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1218; --card: #171b23; --text: #e6e9ef; --muted: #9aa3b2; --line: #2a303c;
+      --accent: #4c8dff; --accent-text: #0b0e13; --warn-bg: #2a2412; --warn-line: #6b5a24;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1218; --card: #171b23; --text: #e6e9ef; --muted: #9aa3b2; --line: #2a303c;
+    --accent: #4c8dff; --accent-text: #0b0e13; --warn-bg: #2a2412; --warn-line: #6b5a24;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  .badge { display: inline-block; font-size: 13px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; margin-left: 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 16px 0; }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 8px; }
+  .warn { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 12px; padding: 16px 20px; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }
+  ol, ul { padding-left: 22px; }
+  footer { margin-top: 40px; font-size: 14px; }
+  a { color: var(--accent); }
+  .lang { float: right; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="lang" href="#english">English</a>
+  <h1>Forex Sentinel <span class="badge">Beta miễn phí</span></h1>
+  <p class="muted">Widget xem giá nhỏ, luôn nổi trên màn hình. Ghi giá vào lệnh của bạn, xem chênh lệch, đặt cảnh báo giá. Chỉ để xem và ghi chép, không đặt lệnh.</p>
+
+  <div class="card">
+    <p><strong>Phiên bản <span id="ver">0.2.0</span></strong> · Windows 10/11 64-bit · khoảng 2,5 MB</p>
+    <p><a class="btn" id="download" href="https://github.com/anhthuong/forex-sentinel-beta/releases/download/v0.2.0/ForexSentinel_0.2.0_x64-setup.exe">Tải bộ cài cho Windows</a></p>
+    <p class="muted">SHA-256: <code id="sha">38cf5501f8300c9687b52fd1f67dae62971bf68c78fcf094b62752fbe70dd714</code></p>
+    <p class="muted">Bản cho macOS đang thử nghiệm nội bộ, chưa phát hành.</p>
+  </div>
+
+  <h2>Ứng dụng làm được gì</h2>
+  <ul>
+    <li>Widget giá XAUUSD, EURUSD… luôn nổi trên các cửa sổ khác, 3 kiểu hiển thị, kéo thả tự do.</li>
+    <li>Lấy giá từ <strong>MetaTrader 5 trên chính máy bạn</strong> (giá của sàn bạn đang dùng). Chưa kết nối thì hiện giá mô phỏng có nhãn <strong>DEMO</strong>.</li>
+    <li>Ghi giá vào lệnh Mua/Bán của bạn và xem chênh lệch theo thời gian thực.</li>
+    <li>Cảnh báo giá bằng thông báo và âm thanh trên máy.</li>
+    <li>Tiếng Việt và nhiều ngôn ngữ khác, tự chọn theo quốc gia.</li>
+    <li>Không cần tài khoản. Dữ liệu chỉ lưu trên máy bạn.</li>
+  </ul>
+
+  <h2>Cài đặt</h2>
+  <ol>
+    <li>Tải và chạy bộ cài. Bản beta chưa được ký số nên Windows sẽ hiện <em>"Windows protected your PC"</em>: bấm <strong>More info → Run anyway</strong>.</li>
+    <li>Ở trang cuối của bộ cài, giữ dấu tích <strong>Create desktop shortcut</strong> nếu muốn có biểu tượng ngoài màn hình.</li>
+    <li>Mở Forex Sentinel. Widget hiện giá DEMO ngay.</li>
+    <li>Để xem giá thật từ sàn của bạn: mở bảng điều khiển → <strong>Kết nối</strong> → làm theo trợ lý kết nối MetaTrader 5. Trợ lý tự tìm MT5 trên máy và chép EA cầu nối khi bạn đồng ý.</li>
+  </ol>
+
+  <h2>Góp ý và báo lỗi</h2>
+  <p>Trong ứng dụng, vào <strong>Chẩn đoán → Chép thông tin hỗ trợ</strong>, rồi gửi đoạn chữ đó kèm mô tả ngắn qua: <strong>Telegram @thuongnv14 (https://t.me/thuongnv14)</strong></p>
+
+  <div class="warn">
+    <p><strong>Lưu ý rủi ro.</strong> Forex Sentinel là công cụ theo dõi giá và ghi chép cá nhân. Ứng dụng không phải sàn hay môi giới, không giữ tiền, không đặt lệnh thật và không tư vấn đầu tư. Giá có thể là giá mô phỏng, bị trễ hoặc sai. Giao dịch ngoại hối, vàng hoặc CFD có rủi ro thua lỗ cao. Ở Việt Nam, giao dịch qua sàn chưa được cấp phép tại Việt Nam không được pháp luật bảo vệ. Bạn tự chịu trách nhiệm tuân thủ quy định nơi bạn sống.</p>
+  </div>
+
+  <h2 id="english">English</h2>
+  <p>Forex Sentinel is a small always-on-top price widget for Windows: watch prices, note your own entry and see the difference, set price alerts. It is for watching and note-taking only and never places orders. Real prices come from <strong>your own MetaTrader 5</strong> on the same computer; without it, the widget shows simulated prices labelled <strong>DEMO</strong>. No account needed; your data stays on your computer.</p>
+  <p>The beta installer is not code-signed yet: when Windows shows <em>"Windows protected your PC"</em>, choose <strong>More info → Run anyway</strong>.</p>
+  <p class="muted"><strong>Risk notice.</strong> Not a broker or exchange; no investment advice. Prices may be simulated, delayed or wrong. Trading forex, gold or CFDs carries a high risk of loss. Follow the rules where you live.</p>
+
+  <footer class="muted">
+    <p><a href="dieu-khoan.html">Điều khoản sử dụng / Terms of Use</a> · <a href="quyen-rieng-tu.html">Chính sách quyền riêng tư / Privacy Policy</a></p>
+    <p>MetaTrader và MQL5 là nhãn hiệu của MetaQuotes Ltd. Forex Sentinel không liên kết và không được MetaQuotes chứng thực. MetaTrader and MQL5 are trademarks of MetaQuotes Ltd; Forex Sentinel is not affiliated with or endorsed by MetaQuotes.</p>
+  </footer>
+</main>
+</body>
+</html>

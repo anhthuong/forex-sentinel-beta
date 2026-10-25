@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quyền riêng tư</title>
+<style>
+  :root {
+    --bg: #f7f8fa; --card: #ffffff; --text: #1d2330; --muted: #5d6677; --line: #e2e6ee;
+    --accent: #1f6feb; --accent-text: #ffffff; --warn-bg: #fff6e0; --warn-line: #f0c36d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1218; --card: #171b23; --text: #e6e9ef; --muted: #9aa3b2; --line: #2a303c;
+      --accent: #4c8dff; --accent-text: #0b0e13; --warn-bg: #2a2412; --warn-line: #6b5a24;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1218; --card: #171b23; --text: #e6e9ef; --muted: #9aa3b2; --line: #2a303c;
+    --accent: #4c8dff; --accent-text: #0b0e13; --warn-bg: #2a2412; --warn-line: #6b5a24;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  .badge { display: inline-block; font-size: 13px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; margin-left: 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 16px 0; }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 8px; }
+  .warn { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 12px; padding: 16px 20px; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 14px; overflow-wrap: anywhere; }
+  ol, ul { padding-left: 22px; }
+  footer { margin-top: 40px; font-size: 14px; }
+  a { color: var(--accent); }
+  .lang { float: right; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; } th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: start; vertical-align: top; } blockquote { margin: 0; padding: 8px 16px; border-inline-start: 4px solid var(--warn-line); background: var(--warn-bg); border-radius: 8px; }
+</style>
+</head>
+<body>
+<main>
+<p><a href="index.html">← Forex Sentinel</a></p>
+<h1>Chính sách quyền riêng tư — Forex Sentinel (bản beta miễn phí)</h1>
+<h2>1. Tóm tắt</h2>
+<p>Bản beta <strong>không thu thập dữ liệu cá nhân nào của bạn về phía chúng tôi</strong>. Ứng dụng không có tài khoản, không có máy chủ, không có quảng cáo, không có công cụ phân tích hay theo dõi (analytics/telemetry). Mọi dữ liệu bạn tạo ra chỉ nằm trên máy tính của bạn.</p>
+<h2>2. Dữ liệu lưu trên máy của bạn</h2>
+<p>Ứng dụng lưu các dữ liệu sau <strong>trên máy của bạn</strong>, trong thư mục <code>%APPDATA%\app.forexsentinel.desktop</code>:</p>
+<table><thead><tr><th>Dữ liệu</th><th>Mục đích</th></tr></thead><tbody><tr><td>Cài đặt (ngôn ngữ, giao diện, vị trí widget, danh sách mã theo dõi)</td><td>Giữ nguyên cách bạn dùng giữa các lần mở</td></tr><tr><td>Giá vào lệnh bạn tự ghi, quy tắc cảnh báo, lịch sử cảnh báo</td><td>Tính chênh lệch giá và báo cho bạn</td></tr><tr><td>Mã thiết bị ngẫu nhiên</td><td>Phân biệt các cài đặt trên máy, không gắn với danh tính của bạn</td></tr><tr><td>Nhật ký thao tác (audit log)</td><td>Ghi lại các thay đổi quan trọng để bạn kiểm tra khi cần</td></tr><tr><td>Mã ghép nối MetaTrader 5</td><td>Lưu trong <strong>Windows Credential Manager</strong> của bạn, không lưu trong tệp cài đặt</td></tr></tbody></table>
+<p>Ứng dụng <strong>không đọc và không lưu mật khẩu MetaTrader 5</strong> của bạn. Từ MetaTrader 5, Ứng dụng chỉ đọc giá, số dư, vị thế và lệnh của tài khoản đang đăng nhập, qua kết nối nội bộ <code>127.0.0.1</code> ngay trên máy của bạn. Những dữ liệu này không được gửi đi đâu cả.</p>
+<p>Ứng dụng đọc thiết lập vùng, ngôn ngữ và múi giờ của Windows để tự chọn ngôn ngữ hiển thị. Việc này diễn ra ngay trên máy, không gửi đi đâu.</p>
+<h2>3. Kết nối mạng</h2>
+<p>Trong bản beta, bản thân Ứng dụng không gửi dữ liệu nào ra Internet. Các thành phần của hệ điều hành có thể tự kết nối mạng theo chính sách của nhà cung cấp, ví dụ Microsoft Edge WebView2 (Microsoft cập nhật) và trình cài WebView2 (tải từ Microsoft khi máy chưa có). MetaTrader 5 kết nối tới sàn của bạn theo chính sách của sàn và MetaQuotes.</p>
+<h2>4. Chia sẻ dữ liệu</h2>
+<p>Chúng tôi không nhận được dữ liệu của bạn nên không bán, không chia sẻ dữ liệu đó với ai. Nếu bạn tự gửi cho chúng tôi một báo lỗi (ví dụ đoạn "Chép thông tin hỗ trợ" trong tab Chẩn đoán), chúng tôi chỉ dùng nó để xử lý lỗi và xoá khi không còn cần. Đoạn thông tin đó không có mã thiết bị, đường dẫn thư mục hay mật khẩu.</p>
+<h2>5. Xoá dữ liệu</h2>
+<p>Gỡ Ứng dụng trong Windows (Cài đặt → Ứng dụng) rồi xoá thư mục <code>%APPDATA%\app.forexsentinel.desktop</code>. Mã ghép nối có thể xoá trong Windows Credential Manager (các mục có chứa <code>app.forexsentinel.desktop</code>) hoặc xoá kết nối trong Ứng dụng trước khi gỡ.</p>
+<h2>6. Trẻ em</h2>
+<p>Ứng dụng dành cho người từ 18 tuổi trở lên.</p>
+<h2>7. Thay đổi và liên hệ</h2>
+<p>Khi chính sách thay đổi (ví dụ khi có tài khoản người dùng), bản mới sẽ được đăng trên trang tải trước khi áp dụng. Liên hệ: <code>Telegram @thuongnv14 (https://t.me/thuongnv14)</code>.</p>
+<hr>
+<h1>Privacy Policy — Forex Sentinel (free beta)</h1>
+<ol><li><strong>Summary.</strong> The beta <strong>collects no personal data on our side</strong>: no accounts, no servers, no ads, no analytics or telemetry. Everything you create stays on your computer.</li><li><strong>Data stored on your computer</strong> (<code>%APPDATA%\app.forexsentinel.desktop</code>): settings, your own entry notes, alert rules and history, a random device id (not linked to your identity) and an audit log of important changes. The MetaTrader 5 pairing secret is kept in <strong>Windows Credential Manager</strong>. The App never reads or stores your MetaTrader 5 password; it reads prices, balance, positions and orders of the logged-in account over a local <code>127.0.0.1</code> connection, and sends them nowhere. Windows region, language and time zone settings are read locally to choose the display language.</li><li><strong>Network.</strong> The App itself sends no data to the internet in the beta. Operating-system components (e.g. Microsoft Edge WebView2 and its installer) and MetaTrader 5 connect under their own providers' policies.</li><li><strong>Sharing.</strong> We receive no data, so we sell or share none. A bug report you choose to send us (e.g. the "Copy for support" text, which contains no device id, folder paths or passwords) is used only to fix the problem and deleted when no longer needed.</li><li><strong>Deleting data.</strong> Uninstall the App, delete <code>%APPDATA%\app.forexsentinel.desktop</code>, and remove the entries containing <code>app.forexsentinel.desktop</code> from Windows Credential Manager (or delete the connection in the App first).</li><li><strong>Age.</strong> For users aged 18 and over.</li><li><strong>Changes and contact.</strong> Updates will be posted on the download page before they apply. Contact: <code>Telegram @thuongnv14 (https://t.me/thuongnv14)</code>.</li></ol>
+</main>
+</body>
+</html>
