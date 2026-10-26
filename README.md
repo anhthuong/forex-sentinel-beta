@@ -1,6 +1,6 @@
 # Forex Sentinel — Beta miễn phí cho Windows
 
-Trang tải: https://anhthuong.github.io/forex-sentinel-beta/
+Trang tải: https://thuongmmo.github.io/forex-sentinel-beta/
 
 Kho này chỉ chứa trang tải và bộ cài (mục **Releases**), không chứa mã nguồn.
 
